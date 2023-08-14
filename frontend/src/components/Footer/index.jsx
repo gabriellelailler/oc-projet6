@@ -1,8 +1,8 @@
- function Footer() {
+function Footer() {
     return (
-        <p>
+        <div class="test">
             © 2020 Kasa. All rights reserved
-        </p>
+        </div>
     )
 }
 
