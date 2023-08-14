@@ -2,14 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/'
-import Survey from './pages/Survey/'
+import About from './pages/About'
+import Header from './components/Header'
+
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/survey" element={<Survey />} />
+        <Route path="/a-propos" element={<About />} />
       </Routes>
     </Router>
   </React.StrictMode>,
