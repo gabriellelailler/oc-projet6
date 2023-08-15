@@ -85,9 +85,13 @@ function  Card() {
       <div className='bloc-3'>
             <div>
               <h3>Description</h3>
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-up"></i>
             </div>
             <div>
               <h3>Équipements</h3>
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-up"></i>
             </div>
       </div>
       {/* Affichez les autres détails de la carte */}
