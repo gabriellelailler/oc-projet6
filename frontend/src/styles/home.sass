@@ -1,6 +1,6 @@
 @import 'general.sass'
 
-.title, .cards-container
+.title
     margin: 20px 45px
 
 .title
@@ -10,7 +10,7 @@
     align-items: center
     
     img
-        width: 1300px
+        width: 1240px
         height: 223px
         object-fit: cover
         border-radius: 25px
@@ -28,9 +28,6 @@
 
     br
         display: none
-
-
-@import 'general.sass'
 
 article
     width: 100%
@@ -65,16 +62,22 @@ article
 .cards-container
     background-color: $secondarycolor
     border-radius: 25px
-    max-width: 1240px
+    max-width: 1180px
     display: grid
     grid-template-columns: repeat(3, 1fr)
     gap: 20px
     padding: 30px
+    margin: 40px 45px
 
 
 @media screen and (min-width: 1240px)
     .cards-container
-        margin: 0 auto
+        margin: 40px auto
+
+@media screen and (max-width: 1024px)
+    .title 
+        h1
+            font-size: 40px
 
 @media screen and (max-width: 767px)
 
