@@ -67,26 +67,41 @@
     margin-bottom: 10px
 
 .bloc-3
-    display: flex
-    justify-content: space-between
-    align-items: center
-    flex-direction: row
-    text-align: left
-    font-size: 18px
-    margin-bottom: 180px
+    margin-bottom: 100px
+    border-radius: 5px
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 20px
 
-    div
-        width: 45%
-        background-color: $maincolor
-        border-radius: 10px
-        color: white
-        padding: 10px
+    .bloc-3-title
         display: flex
         justify-content: space-between
         align-items: center
+        background-color: $maincolor
+        border-radius: 5px
+        padding: 10px 20px
+
+        h2
+            font-size: 24px
+            color: white
+
+        i
+            color: white
+        
+        .fa-chevron-down
+            display: none
+
     
-    .fa-chevron-down
-        display: none
+    .bloc-3-description
+        background-color: $secondarycolor
+        border-radius: 0px 0px 5px 5px
+        padding: 15px 20px
+        margin-bottom: 30px
+        
+        p
+            color: $maincolor
+            font-size: 16px
+            padding: 0px
         
 
 @media screen and (min-width: 1290px)
@@ -139,11 +154,13 @@
             margin-left: 10px
     
     .bloc-3
+        display: flex
         flex-direction: column
+        margin-top: 40px
 
         div
-            width: calc(100% - 20px)
             border-radius: 5px
             font-size: 13px
-            margin: 20px 25px
-        
+
+        .bloc-3-description
+            margin-bottom: 10px

@@ -83,17 +83,30 @@ function  Card() {
       </div>
 
       <div className='bloc-3'>
-            <div>
-              <h3>Description</h3>
+        <div>        
+          <div className='bloc-3-title'>
+              <h2>Description</h2>
               <i class="fas fa-chevron-down"></i>
               <i class="fas fa-chevron-up"></i>
-            </div>
-            <div>
-              <h3>Équipements</h3>
+          </div>
+          <div className='bloc-3-description'>
+              <p>{card.description}</p>
+          </div>
+        </div>
+        <div>
+          <div className='bloc-3-title'>
+              <h2>Équipements</h2>
               <i class="fas fa-chevron-down"></i>
               <i class="fas fa-chevron-up"></i>
-            </div>
-      </div>
+          </div>
+          <div className='bloc-3-description'>
+              <p>
+                {card.equipments.map((equipments, index) => (
+              <p key={index} className='tag'>{equipments}</p>
+              ))}</p>
+          </div>
+        </div>
+        </div>
       {/* Affichez les autres détails de la carte */}
     </div>
   );

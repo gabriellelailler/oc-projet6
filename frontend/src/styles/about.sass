@@ -3,36 +3,50 @@
 .container-about
     display: flex
     flex-direction: column
-    justify-content: center
-    align-items: center
     margin-bottom: 100px
+    max-width: 1023px
+    width: 70%
+    padding: 10px
+    border-radius: 5px
+    margin-top: 20px
 
-    div
-        background-color: $maincolor
-        max-width: 1023px
-        width: 70%
-        padding: 10px
-        border-radius: 5px
-        margin-bottom: 20px
-        margin-top: 20px
+    .container-about-title
         display: flex
         justify-content: space-between
         align-items: center
+        background-color: $maincolor
+        border-radius: 5px
+        padding: 10px 20px
+
+        h2
+            font-size: 24px
+            color: white
+
+        i
+            color: white
+        
+        .fa-chevron-down
+            display: none
+
     
-    p
-        padding: 0px 10px 0px 10px
-        font-size: 24px
-    
-    i
-        color: white
-    
-    .fa-chevron-down
-        display: none
+    .container-about-description
+        background-color: $secondarycolor
+        border-radius: 0px 0px 5px 5px
+        padding: 15px 20px
+        margin-bottom: 30px
+        
+        p
+            color: $maincolor
+            font-size: 16px
+            padding: 0px
 
 @media screen and (max-width: 767px)
    .container-about
         div
             width: calc(100% - 70px)
         
-        p
-            font-size: 13px
+            h2
+                font-size: 13px
+            
+            p
+                font-size: 10px
