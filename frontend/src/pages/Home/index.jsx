@@ -13,7 +13,7 @@ function Home() {
           {logements.map(logement => (
             <article key ={logement.id}>
               <h2>{logement.title}</h2>
-              {/* <img src={logement.cover} alt={logement.title} /> - a supp si pas besoin image*/}
+              <img src={logement.cover} alt={logement.title} />
             </article>
           ))}
         </div>
