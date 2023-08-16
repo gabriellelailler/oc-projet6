@@ -8,7 +8,6 @@
     margin-top: 30px
     margin-left: auto
     margin-right: auto
-    
 
     &__card
         margin-bottom: 30px
@@ -31,24 +30,21 @@
         i
             color: white
 
+        .rotate
+            transform: rotate(180deg)
+            transition: 0.7s
+
+        .rotate2
+            transform: rotate(360deg)
+            transition: 0.7s
+
         .fa-chevron-up
-            display: block
             &:hover
                 cursor: pointer
-            
-            &.open
-                display: none
-        
-        .fa-chevron-down
-            display: none
 
-            &:hover
-                cursor: pointer
-            
-            &.open
-                display: block
+    .box
+        overflow: hidden
 
-    
     &__description
         background-color: $secondarycolor
         border-radius: 0px 0px 5px 5px
@@ -56,16 +52,21 @@
         max-width: 1000px
         margin-left: auto
         margin-right: auto
-        display: none
-        
+        position: relative
+        bottom: 100px
+
         &.open
-            display: block
+            bottom: 0px
+            transition: 0.5s
+
+        &.close
+            bottom: 200px
+            transition: 0.9s
 
         p
             color: $maincolor
             font-size: 16px
             padding: 0px
-
 
 @media screen and (max-width: 767px)
     .container-about
@@ -76,6 +77,6 @@
             h2
                 font-size: 13px
 
-        &__description      
+        &__description
             p
                 font-size: 10px

@@ -134,28 +134,29 @@ function  Card() {
         <div className='bloc-3__card'>        
           <div className='bloc-3__title'>
               <h2>Description</h2>
-              <i className={`fas fa-chevron-down ${isDescriptionOpen ? 'open' : ''}`} onClick={handleDescriptionToggle}></i>
-              <i className={`fas fa-chevron-up ${isDescriptionOpen ? 'open' : ''}`} onClick={handleDescriptionToggle}></i>
+              <i className={`fas fa-chevron-up ${isDescriptionOpen ? 'rotate' : 'rotate2'}`} onClick={handleDescriptionToggle}></i>
           </div>
-          <div className={`bloc-3__description ${isDescriptionOpen ? 'open' : ''}`}>
+          <div className="box">
+          <div className={`bloc-3__description ${isDescriptionOpen ? 'open' : 'close'}`}>
               <p>{card.description}</p>
+          </div>
           </div>
         </div>
         <div className='bloc-3__card'>
           <div className='bloc-3__title'>
               <h2>Équipements</h2>
-              <i className={`fas fa-chevron-down ${isEquipmentsOpen ? 'open' : ''}`} onClick={handleEquipmentsToggle}></i>
-              <i className={`fas fa-chevron-up ${isEquipmentsOpen ? 'open' : ''}`} onClick={handleEquipmentsToggle}></i>
+              <i className={`fas fa-chevron-up ${isEquipmentsOpen ? 'rotate' : 'rotate2'}`} onClick={handleEquipmentsToggle}></i>
           </div>
-          <div className={`bloc-3__description ${isEquipmentsOpen ? 'open' : ''}`}>
-              <p>
-                {card.equipments.map((equipments, index) => (
-              <p key={index} className='tag'>{equipments}</p>
-              ))}</p>
+          <div className="box">
+            <div className={`bloc-3__description ${isEquipmentsOpen ? 'open' : 'close'}`}>
+                <p>
+                  {card.equipments.map((equipments, index) => (
+                <p key={index} className='tag'>{equipments}</p>
+                ))}</p>
+            </div>
           </div>
         </div>
         </div>
-      {/* Affichez les autres détails de la carte */}
     </div>
   );
     

@@ -1,23 +1,23 @@
 import '../../styles/header.sass'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import logo from '../../assets/kasa-red-logo.png'
  
 function Header() {
     return (
         <nav>
-            <Link to="/">
+            <NavLink to="/">
                 <img src={logo} alt="Logo Kasa" />
-            </Link>
+            </NavLink>
             <div className='menu'>
                 <div className='menu__item'>
-                    <Link to="/" activeClassName="activeLink">
+                    <NavLink to="/" activeClassName="activeLink">
                         Accueil
-                    </Link>
+                    </NavLink>
                 </div>
                 <div className='menu__item'>
-                    <Link to="/a-propos" activeClassName="activeLink">
+                    <NavLink to="/a-propos" activeClassName="activeLink">
                         A Propos
-                    </Link>
+                    </NavLink>
                 </div>
             </div>
         </nav>
