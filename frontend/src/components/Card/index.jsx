@@ -37,7 +37,7 @@ function  Card() {
   const pictureCount = card.pictures.length;
   const currentPictureNumber = currentPictureIndex + 1;
 
-  
+
   if (!card) {
     return (
        <Navigate to="/404" />
@@ -56,7 +56,7 @@ function  Card() {
           )}
         </div>
 
-        <div className='carousel-images'>
+        <div className='carousel__images'>
           <img src={card.pictures[currentPictureIndex]} alt={card.title} />
         </div>  
 
