@@ -1,28 +1,28 @@
 @import 'general.sass'
 
-img
+nav
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 30px
+  margin-left: auto
+  margin-right: auto
+  margin-top: 30px
+  max-width: 1240px
+
+  img
     width: 210px
     height: auto
 
-nav
-    display: flex
-    align-items: center
-    justify-content: space-between
-    margin-bottom: 30px
-    margin-left: auto
-    margin-right: auto
-    margin-top: 30px
-    max-width: 1240px
+  a
+    font-size: 24px
+    color: $maincolor
+    text-decoration: none
+    padding-left: 30px
+    margin: 0px
 
-    a
-        font-size: 24px
-        color: $maincolor
-        text-decoration: none
-        padding-left: 30px
-        margin: 0px
-
-        &:hover
-            text-decoration: underline
+    &:hover
+        text-decoration: underline
 
 @media screen and (max-width: 1330px)
     nav
@@ -30,14 +30,15 @@ nav
         margin-right: 45px
 
 @media screen and (max-width: 767px)
-  img
-    height: 46.88px
-    width: auto
 
   nav
     margin-left: 25px
     margin-right: 25px
     margin-top: 20px
+
+    img
+      height: 46.88px
+      width: auto
 
     a
         font-size: 12px

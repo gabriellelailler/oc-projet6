@@ -3,6 +3,7 @@ import '../../styles/card.sass'
 import { useParams } from 'react-router-dom'; // hook permettant d'obtenir les paramètres d'URL
 import '../../styles/error.sass'
 import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom'
 
 
 function  Card() {
@@ -21,13 +22,8 @@ function  Card() {
 
   if (!card) {
     return (
-      <div className="error">
-            <h1>404</h1>
-            <h2>Oups! La page que vous demandez n'existe pas</h2>
-            <p><a href="/">Retourner sur la page d'accueil</a></p>
-        </div>
+       <Navigate to="/404" />
     )
-    
   }
 
   return (
@@ -95,23 +91,23 @@ function  Card() {
       </div>
 
       <div className='bloc-3'>
-        <div className='bloc-3-card'>        
-          <div className='bloc-3-title'>
+        <div className='bloc-3__card'>        
+          <div className='bloc-3__title'>
               <h2>Description</h2>
               <i className={`fas fa-chevron-down ${isDescriptionOpen ? 'open' : ''}`} onClick={handleDescriptionToggle}></i>
               <i className={`fas fa-chevron-up ${isDescriptionOpen ? 'open' : ''}`} onClick={handleDescriptionToggle}></i>
           </div>
-          <div className={`bloc-3-description ${isDescriptionOpen ? 'open' : ''}`}>
+          <div className={`bloc-3__description ${isDescriptionOpen ? 'open' : ''}`}>
               <p>{card.description}</p>
           </div>
         </div>
-        <div className='bloc-3-card'>
-          <div className='bloc-3-title'>
+        <div className='bloc-3__card'>
+          <div className='bloc-3__title'>
               <h2>Équipements</h2>
               <i className={`fas fa-chevron-down ${isEquipmentsOpen ? 'open' : ''}`} onClick={handleEquipmentsToggle}></i>
               <i className={`fas fa-chevron-up ${isEquipmentsOpen ? 'open' : ''}`} onClick={handleEquipmentsToggle}></i>
           </div>
-          <div className={`bloc-3-description ${isEquipmentsOpen ? 'open' : ''}`}>
+          <div className={`bloc-3__description ${isEquipmentsOpen ? 'open' : ''}`}>
               <p>
                 {card.equipments.map((equipments, index) => (
               <p key={index} className='tag'>{equipments}</p>
