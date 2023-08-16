@@ -83,7 +83,7 @@ function  Card() {
       </div>
 
       <div className='bloc-3'>
-        <div>        
+        <div className='bloc-3-card'>        
           <div className='bloc-3-title'>
               <h2>Description</h2>
               <i class="fas fa-chevron-down"></i>
@@ -93,7 +93,7 @@ function  Card() {
               <p>{card.description}</p>
           </div>
         </div>
-        <div>
+        <div className='bloc-3-card'>
           <div className='bloc-3-title'>
               <h2>Équipements</h2>
               <i class="fas fa-chevron-down"></i>
