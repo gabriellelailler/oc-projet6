@@ -1,22 +1,23 @@
 @import 'general.sass'
 
 .container-about
-    display: flex
-    flex-direction: column
     margin-bottom: 100px
-    max-width: 1023px
     width: 70%
     padding: 10px
     border-radius: 5px
-    margin-top: 20px
+    margin-top: 30px
+    margin-left: auto
+    margin-right: auto
 
     .container-about-title
         display: flex
         justify-content: space-between
-        align-items: center
         background-color: $maincolor
         border-radius: 5px
         padding: 10px 20px
+        max-width: 1000px
+        margin-left: auto
+        margin-right: auto
 
         h2
             font-size: 24px
@@ -34,6 +35,9 @@
         border-radius: 0px 0px 5px 5px
         padding: 15px 20px
         margin-bottom: 30px
+        max-width: 1000px
+        margin-left: auto
+        margin-right: auto
         
         p
             color: $maincolor
@@ -41,12 +45,14 @@
             padding: 0px
 
 @media screen and (max-width: 767px)
-   .container-about
-        div
-            width: calc(100% - 70px)
-        
+    .container-about
+        width: calc(100% - 50px)
+        padding: 0px
+
+        .container-about-title
             h2
                 font-size: 13px
-            
+
+        .container-about-description      
             p
                 font-size: 10px
