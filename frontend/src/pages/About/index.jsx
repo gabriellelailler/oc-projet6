@@ -8,7 +8,6 @@ function About() {
                 <img src={mountain} alt="paysage bord de mer" />
             </div>
             <div className='container-about'>
-                
                 <div className='container-about-title'>
                     <h2>Fiabilité</h2>
                     <i class="fas fa-chevron-down"></i>
