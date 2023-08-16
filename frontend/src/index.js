@@ -10,7 +10,7 @@ import Card from './components/Card'
 
 
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Header />
