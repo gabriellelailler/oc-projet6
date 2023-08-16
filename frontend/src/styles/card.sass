@@ -91,8 +91,22 @@
         i
             color: white
         
+        .fa-chevron-up
+            display: block
+            &:hover
+                cursor: pointer
+            
+            &.open
+                display: none
+        
         .fa-chevron-down
             display: none
+
+            &:hover
+                cursor: pointer
+            
+            &.open
+                display: block
 
     
     .bloc-3-description
@@ -105,6 +119,9 @@
             color: $maincolor
             font-size: 16px
             padding: 0px
+        
+        &.open
+            display: block
         
 
 @media screen and (min-width: 1290px)

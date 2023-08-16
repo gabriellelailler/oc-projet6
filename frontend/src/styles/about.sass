@@ -16,13 +16,13 @@
     .container-about-title
         display: flex
         justify-content: space-between
+        align-items: center
         background-color: $maincolor
         border-radius: 5px
         padding: 10px 20px
         max-width: 1000px
         margin-left: auto
         margin-right: auto
-        
 
         h2
             font-size: 24px
@@ -30,9 +30,23 @@
 
         i
             color: white
+
+        .fa-chevron-up
+            display: block
+            &:hover
+                cursor: pointer
+            
+            &.open
+                display: none
         
         .fa-chevron-down
             display: none
+
+            &:hover
+                cursor: pointer
+            
+            &.open
+                display: block
 
     
     .container-about-description
@@ -43,12 +57,16 @@
         margin-left: auto
         margin-right: auto
         display: none
+    
+        &.open
+            display: block
 
         
         p
             color: $maincolor
             font-size: 16px
             padding: 0px
+
 
 @media screen and (max-width: 767px)
     .container-about

@@ -2,10 +2,22 @@ import logements from '../../logements.json'
 import '../../styles/card.sass'
 import { useParams } from 'react-router-dom'; // hook permettant d'obtenir les paramètres d'URL
 import '../../styles/error.sass'
+import React, { useState } from 'react';
+
 
 function  Card() {
   const { id } = useParams(); // -> si l'URL est "/article/123", id sera égal à "123".
   const card = logements.find(logement => logement.id === id); // .find() pour rechercher l'article correspondant dans le tableau logements en utilisant l'ID que nous avons extrait des paramètres d'URL. 
+
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false); 
+  const handleDescriptionToggle = () => { 
+    setIsDescriptionOpen(!isDescriptionOpen); 
+  }
+
+  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false); 
+  const handleEquipmentsToggle = () => { 
+    setIsEquipmentsOpen(!isEquipmentsOpen); 
+  }
 
   if (!card) {
     return (
@@ -86,20 +98,20 @@ function  Card() {
         <div className='bloc-3-card'>        
           <div className='bloc-3-title'>
               <h2>Description</h2>
-              <i class="fas fa-chevron-down"></i>
-              <i class="fas fa-chevron-up"></i>
+              <i className={`fas fa-chevron-down ${isDescriptionOpen ? 'open' : ''}`} onClick={handleDescriptionToggle}></i>
+              <i className={`fas fa-chevron-up ${isDescriptionOpen ? 'open' : ''}`} onClick={handleDescriptionToggle}></i>
           </div>
-          <div className='bloc-3-description'>
+          <div className={`bloc-3-description ${isDescriptionOpen ? 'open' : ''}`}>
               <p>{card.description}</p>
           </div>
         </div>
         <div className='bloc-3-card'>
           <div className='bloc-3-title'>
               <h2>Équipements</h2>
-              <i class="fas fa-chevron-down"></i>
-              <i class="fas fa-chevron-up"></i>
+              <i className={`fas fa-chevron-down ${isEquipmentsOpen ? 'open' : ''}`} onClick={handleEquipmentsToggle}></i>
+              <i className={`fas fa-chevron-up ${isEquipmentsOpen ? 'open' : ''}`} onClick={handleEquipmentsToggle}></i>
           </div>
-          <div className='bloc-3-description'>
+          <div className={`bloc-3-description ${isEquipmentsOpen ? 'open' : ''}`}>
               <p>
                 {card.equipments.map((equipments, index) => (
               <p key={index} className='tag'>{equipments}</p>
