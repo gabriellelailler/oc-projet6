@@ -18,11 +18,19 @@ nav
     font-size: 24px
     color: $maincolor
     text-decoration: none
-    padding-left: 30px
     margin: 0px
 
     &:hover
         text-decoration: underline
+  
+  .menu
+    display: flex
+  
+    &__item
+      padding-left: 30px
+
+  .activeLink
+    text-decoration: underline
 
 @media screen and (max-width: 1330px)
     nav
