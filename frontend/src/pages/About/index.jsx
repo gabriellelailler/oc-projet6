@@ -1,6 +1,6 @@
 import mountain from '../../assets/mountains.png'
 import '../../styles/about.sass'
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 
 
 function About() {
@@ -31,7 +31,6 @@ function About() {
     const handleSecuriteToggle = () => { 
         setIsSecuriteOpen(!isSecuriteOpen); 
     };
-
 
 
     return (
@@ -69,15 +68,17 @@ function About() {
                             <i className={`fas fa-chevron-up ${isRespectOpen ? 'open' : ''}`} onClick={handleRespectToggle}></i>
                         )}
                     </div>
-                    <div className={`container-about__description ${isRespectOpen ? 'open' : ''}`}>
-                        <p>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.</p>
+                    <div className='wrapper'>
+                        <div className={`container-about__description ${isRespectOpen ? 'open' : ''}`}>
+                            <p>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div className='container-about__card'>
                     <div className='container-about__title'>
                         <h2>Service</h2>
-                        {isRespectOpen ? (
+                        {isServiceOpen ? (
                             <i className={`fas fa-chevron-down ${isServiceOpen ? 'open' : ''}`} onClick={handleServiceToggle}></i>
                         ) :
                         (

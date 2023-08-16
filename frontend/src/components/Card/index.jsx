@@ -20,6 +20,21 @@ function  Card() {
     setIsEquipmentsOpen(!isEquipmentsOpen); 
   }
 
+  // ici index permettant le défilement
+  const [currentPictureIndex, setCurrentPictureIndex] = useState(0);
+  const nextPicture = () => {
+    setCurrentPictureIndex((prevIndex) => (prevIndex + 1) % card.pictures.length);
+  };
+  const prevPicture = () => {
+    setCurrentPictureIndex(
+      (prevIndex) => (prevIndex - 1 + card.pictures.length) % card.pictures.length
+    );
+  };
+
+  //ci-dessous compteur des images
+  const pictureCount = card.pictures.length;
+  const currentPictureNumber = currentPictureIndex + 1;
+
   if (!card) {
     return (
        <Navigate to="/404" />
@@ -28,7 +43,20 @@ function  Card() {
 
   return (
     <div className='card'>
-      <img src={card.cover} alt={card.title} />
+      <div className='image-container'>
+      {pictureCount > 1 && (
+        <>
+        <i class="fas fa-chevron-left" onClick={prevPicture}></i>
+        </>
+      )}
+        <img src={card.pictures[currentPictureIndex]} alt={card.title} />
+        {pictureCount > 1 && (
+        <>
+        <i class="fas fa-chevron-right fa-lg" onClick={nextPicture}></i>
+        <p className="image-counter">{`${currentPictureNumber}/${pictureCount}`}</p>
+        </>
+      )}
+      </div>
 
       <div className='bloc-desktop-1'>
         <div>
