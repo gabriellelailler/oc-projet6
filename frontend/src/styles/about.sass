@@ -44,11 +44,10 @@
 
     .box
         overflow: hidden
+        transition: height 0.8s ease
 
-        .open-box
-            height: 100%
-        .close-box
-            height: 0%
+        &.close-box
+            height: 0px
 
     &__description
         background-color: $secondarycolor
@@ -62,11 +61,11 @@
 
         &.open
             bottom: 0px
-            transition: 0.5s
+            transition: 0.8s
 
         &.close
             bottom: 200px
-            transition: 0.9s
+            transition: 1s
 
         p
             color: $maincolor
