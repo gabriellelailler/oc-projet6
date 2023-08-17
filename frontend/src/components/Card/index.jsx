@@ -23,10 +23,10 @@ function  Card() {
   // ici index permettant le défilement
   const [currentPictureIndex, setCurrentPictureIndex] = useState(0);
 
-
   const nextPicture = () => {
     setCurrentPictureIndex((prevIndex) => (prevIndex + 1) % card.pictures.length);
   };
+
   const prevPicture = () => {
     setCurrentPictureIndex(
       (prevIndex) => (prevIndex - 1 + card.pictures.length) % card.pictures.length
@@ -36,6 +36,7 @@ function  Card() {
   //ci-dessous compteur des images
   const pictureCount = card.pictures.length;
   const currentPictureNumber = currentPictureIndex + 1;
+
 
 
   if (!card) {
@@ -56,18 +57,37 @@ function  Card() {
           )}
         </div>
 
-        <div className='carousel__images'>
-          <img src={card.pictures[currentPictureIndex]} alt={card.title} />
-        </div>  
+        <div className='carousel__track-container'>
+          <div className='carousel__track'>
+              {card.pictures.map((image, index) => (
+                <img 
+                className={`carousel__slide ${index === currentPictureIndex ? 'active' : 'hidden'}`}
+                style={{
+                  transform: `translateX(${(index - currentPictureIndex) * 100}%)`,
+                }}
+                key={index} 
+                src={image} 
+                alt={card.title}></img>
+              ))}
+          </div>
+        </div> 
 
         <div className='carousel__button'>
           {pictureCount > 1 && (
             <>
             <i class="fas fa-chevron-right fa-lg" onClick={nextPicture}></i>
+            </>
+          )}
+        </div>
+        
+        <div className='carousel__button'>
+          {pictureCount > 1 && (
+            <>
             <p className="image-counter">{`${currentPictureNumber}/${pictureCount}`}</p>
             </>
           )}
         </div>
+
       </div>
 
       <div className='bloc-desktop-1'>

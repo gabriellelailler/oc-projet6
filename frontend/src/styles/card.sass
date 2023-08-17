@@ -21,9 +21,30 @@
             top: 50%
             transform: translateY(-50%)
             color: white
+            z-index: 1
 
             &:hover
                 cursor: pointer
+
+        .carousel__track-container
+            height: 415px
+            overflow: hidden
+
+        .carousel__track
+            position: relative
+
+        .carousel__slide
+            position: absolute
+            top: 0
+            bottom: 0
+            transition: transform 0.5s
+            width: 100%
+
+        .active
+            transform: translateX(0%)
+
+        .hidden
+            transform: translateX(100%)
 
         .fa-chevron-left
             left: 5%
@@ -169,15 +190,14 @@
             object-fit: cover
             border-radius: 10px
 
+        .carousel__track-container
+            height: 255px
+
         h2
             font-size: 18px
 
         p
             font-size: 14px
-
-        .image-container
-            p
-                display: none
 
     .tags
         p
