@@ -10,6 +10,7 @@ function  Card() {
   const { id } = useParams(); // -> si l'URL est "/article/123", id sera égal à "123".
   const card = logements.find(logement => logement.id === id); // .find() pour rechercher l'article correspondant dans le tableau logements en utilisant l'ID que nous avons extrait des paramètres d'URL. 
 
+
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false); 
   const handleDescriptionToggle = () => { 
     setIsDescriptionOpen(!isDescriptionOpen); 
@@ -33,17 +34,15 @@ function  Card() {
     );
   };
 
-  //ci-dessous compteur des images
-  const pictureCount = card.pictures.length;
-  const currentPictureNumber = currentPictureIndex + 1;
-
-
-
   if (!card) {
     return (
        <Navigate to="/404" />
-    )
+    );
   }
+
+  //ci-dessous compteur des images (doit arriver après le 404)
+  const pictureCount = card.pictures.length;
+  const currentPictureNumber = currentPictureIndex + 1;
 
   return (
     <div className='card'>
