@@ -156,7 +156,7 @@ function  Card() {
               <h2>Description</h2>
               <i className={`fas fa-chevron-up ${isDescriptionOpen ? 'rotate' : 'rotate2'}`} onClick={handleDescriptionToggle}></i>
           </div>
-          <div className="box">
+          <div className={`box ${isDescriptionOpen ? '' : 'close-box'}`}>
           <div className={`bloc-3__description ${isDescriptionOpen ? 'open' : 'close'}`}>
               <p>{card.description}</p>
           </div>
@@ -167,7 +167,7 @@ function  Card() {
               <h2>Équipements</h2>
               <i className={`fas fa-chevron-up ${isEquipmentsOpen ? 'rotate' : 'rotate2'}`} onClick={handleEquipmentsToggle}></i>
           </div>
-          <div className={'box'}>
+          <div className={`box ${isEquipmentsOpen ? '' : 'close-box'}`}>
             <div className={`bloc-3__description ${isEquipmentsOpen ? 'open' : 'close'}`}>
                 <p>
                   {card.equipments.map((equipments, index) => (
