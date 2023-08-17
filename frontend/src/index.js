@@ -7,10 +7,12 @@ import Error from './pages/Error'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Card from './components/Card'
+const rootContainer = document.getElementById('root');
+const root = ReactDOM.createRoot(rootContainer);
 
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+root.render(
   <React.StrictMode>
     <Router>
       <Header />
@@ -22,6 +24,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </Routes>
       <Footer />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 )

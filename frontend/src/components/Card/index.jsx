@@ -52,7 +52,7 @@ function  Card() {
         <div className='carousel__button'>
           {pictureCount > 1 && (
             <>
-            <i class="fas fa-chevron-left" onClick={prevPicture}></i>
+            <i className="fas fa-chevron-left" onClick={prevPicture}></i>
             </>
           )}
         </div>
@@ -75,7 +75,7 @@ function  Card() {
         <div className='carousel__button'>
           {pictureCount > 1 && (
             <>
-            <i class="fas fa-chevron-right fa-lg" onClick={nextPicture}></i>
+            <i className="fas fa-chevron-right fa-lg" onClick={nextPicture}></i>
             </>
           )}
         </div>
@@ -169,10 +169,10 @@ function  Card() {
           </div>
           <div className={`box ${isEquipmentsOpen ? '' : 'close-box'}`}>
             <div className={`bloc-3__description ${isEquipmentsOpen ? 'open' : 'close'}`}>
-                <p>
+                <ul>
                   {card.equipments.map((equipments, index) => (
-                <p key={index} className='tag'>{equipments}</p>
-                ))}</p>
+                  <li key={index} className='tag'>{equipments}</li>
+                ))}</ul>
             </div>
           </div>
         </div>
